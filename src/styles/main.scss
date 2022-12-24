@@ -1,0 +1,164 @@
+@use 'variaveis';
+
+@font-face {
+    font-family: Avenir;
+    src: url(../../assets/fonts/Avenir-Regular.woff2);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Avenir;
+    src: url(../../assets/fonts/Avenir-Bold.woff2);
+    font-weight: 700;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: Avenir, sans-serif;
+}
+
+body {
+    width: 100vw;
+    min-height: 100vh;
+    background-image: url('../images/darthvader.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: variaveis.$corSecundaria;
+}
+
+header {
+    width: 100vw;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+
+    img {
+        height: 80px;
+    }
+
+    ul {
+        display: flex;
+    
+        li {
+            color: variaveis.$corPrincipal;
+            font-size: 18px;
+            margin-left: 40px;
+            cursor: pointer;
+
+            a {
+                color: variaveis.$corPrincipal;
+            }
+        }
+    }
+}
+
+.container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 30px;
+
+    &__content {
+        width: 50%;
+        height: 100%;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        h1 {
+            font-size: 70px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: variaveis.$corPrincipal;
+        }
+
+        p {
+            color: variaveis.$corParagrafo;
+            line-height: 1.5;
+            max-width: 80%;
+            margin-top: 30px;
+            text-align: justify;
+        }
+
+        &__nav {
+            width: 100%;
+
+            ul {
+                display: flex;
+                width: 80%;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px;
+                border-bottom: .5px solid variaveis.$corFundoRessalto;
+                margin: 0 auto;
+
+                li {
+                    color: variaveis.$corSecundaria;
+                    font-size: 18px;
+                    font-weight: 400;
+                    cursor: pointer;
+                    position: relative;
+
+                    &:first-child::before {
+                        position: absolute;
+                        content: '';
+                        height: 2px;
+                        width: calc(100% + 20px);
+                        bottom: -10px;
+                        left: -10px;
+                        background: variaveis.$corPrincipal;
+                    }
+                }
+            }
+        }
+
+        &__tags {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 70%;
+            margin-bottom: 20px;
+
+            &__item {
+                font-size: 13px;
+                margin: 0 15px;
+                padding: 6px 10px;
+                background: variaveis.$corFundoRessalto;
+                border-radius: 4px;
+            }
+        }
+    }
+}
+
+.more {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    bottom: 30px;
+    right: 30px;
+
+    img {
+        width: 200px;
+        height: 115px;
+        object-fit: cover;
+        border: 2px solid variaveis.$corPrincipal;
+        cursor: pointer;
+        margin: 0 10px;
+    }
+
+    &__prev img,
+    &__next img {
+        height: 30px;
+        width: 30px;
+        border: none;
+    }
+}
