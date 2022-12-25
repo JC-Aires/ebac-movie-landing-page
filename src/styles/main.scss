@@ -39,6 +39,10 @@ header {
     align-items: center;
     padding: 20px 40px;
 
+    @media (max-width: 768px) {
+        display: block;
+    }
+
     img {
         height: 80px;
     }
@@ -55,6 +59,11 @@ header {
             a {
                 color: variaveis.$corPrincipal;
             }
+
+            @media (max-width: 768px) {
+                font-size: 12px;
+                margin-left: 12px;
+            }
         }
     }
 }
@@ -65,6 +74,10 @@ header {
     align-items: center;
     padding: 30px;
 
+    @media (max-width: 768px) {
+        justify-content: space-around;
+    }
+
     &__content {
         width: 50%;
         height: 100%;
@@ -74,11 +87,28 @@ header {
         justify-content: center;
         flex-direction: column;
 
+        @media (max-width: 768px) {
+            width: 100%;
+            margin-bottom: 32px;
+        }
+
         h1 {
             font-size: 70px;
             font-weight: 700;
             letter-spacing: 2px;
             color: variaveis.$corPrincipal;
+
+            @media (max-width: 768px) {
+                font-size: 20px;
+                letter-spacing: 0;
+                margin: 24px auto;
+            }
+
+            @media (max-width: 1023px) {
+                font-size: 30px;
+                letter-spacing: 0;
+                margin: 24px auto;
+            }
         }
 
         p {
@@ -87,36 +117,38 @@ header {
             max-width: 80%;
             margin-top: 30px;
             text-align: justify;
+
+            @media (max-width: 768px) {
+                font-size: 12px;
+                max-width: 100%;
+                justify-content: flex-start;
+            }
         }
 
         &__nav {
             width: 100%;
+            display: flex;
+            justify-content: center;
 
-            ul {
-                display: flex;
-                width: 80%;
-                justify-content: space-between;
-                align-items: center;
-                padding: 10px;
-                border-bottom: .5px solid variaveis.$corFundoRessalto;
-                margin: 0 auto;
+            &__button {
+                color: variaveis.$corSecundaria;
+                font-size: 20px;
+                padding-bottom: 5px;
+                border: none;
+                border-bottom: 5px solid transparent;
+                background: none;
+                margin: 0 1vw;
+                cursor: pointer;
+                
 
-                li {
-                    color: variaveis.$corSecundaria;
-                    font-size: 18px;
-                    font-weight: 400;
-                    cursor: pointer;
-                    position: relative;
+                @media (max-width: 768px) {
+                    font-size: 12px;
+                    margin: 0 2.5vw;
+                    border-bottom: 2px solid transparent;
+                }
 
-                    &:first-child::before {
-                        position: absolute;
-                        content: '';
-                        height: 2px;
-                        width: calc(100% + 20px);
-                        bottom: -10px;
-                        left: -10px;
-                        background: variaveis.$corPrincipal;
-                    }
+                &--is-active {
+                    border-color: variaveis.$corPrincipal;
                 }
             }
         }
@@ -126,7 +158,7 @@ header {
             justify-content: center;
             align-items: center;
             width: 70%;
-            margin-bottom: 20px;
+            margin-bottom: 40px;
 
             &__item {
                 font-size: 13px;
@@ -134,6 +166,10 @@ header {
                 padding: 6px 10px;
                 background: variaveis.$corFundoRessalto;
                 border-radius: 4px;
+
+                @media (max-width: 768px) {
+                    font-size: 10px;
+                }
             }
         }
     }
@@ -146,6 +182,12 @@ header {
     bottom: 30px;
     right: 30px;
 
+    @media (max-width: 768px) {
+        position: relative;
+        justify-content: flex-end;
+        right: 15px;
+    }
+
     img {
         width: 200px;
         height: 115px;
@@ -153,6 +195,12 @@ header {
         border: 2px solid variaveis.$corPrincipal;
         cursor: pointer;
         margin: 0 10px;
+
+        @media (max-width: 768px) {
+            width: 100px;
+            height: 58px;
+            
+        }
     }
 
     &__prev img,
